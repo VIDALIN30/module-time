@@ -1,0 +1,26 @@
+{
+  "name": "module-time",
+  "version": "1.0.0",
+  "description": "Modulo para manejo de tiempos",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standardx | snazzy",
+    "lintfix": "standardx --fix | snazzy"
+  },
+  "author": "Carlos Morales",
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.28"
+  },
+  "eslintConfig": {
+    "extends": "standard",
+    "rules": {
+      "eqeqeq": 0
+    }
+  },
+  "devDependencies": {
+    "snazzy": "^8.0.0",
+    "standardx": "^5.0.0"
+  }
+}
