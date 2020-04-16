@@ -36,12 +36,17 @@ service.convertToLocalZone = function (fecha, format = false) {
 
 service.getTodayAndHourUTC = function (format = false) {
   const formato = format || config.formatoLocal
+  return moment().tz(config.timezone).utc().format(formato)
+}
+
+service.getTodayAndHourLocal = function (format = false) {
+  const formato = format || config.formatoLocal
   return moment().tz(config.timezone).format(formato)
 }
 
 service.getYesterdayAndHourUTC = function (format = false) {
   const formato = format || config.formatoLocal
-  return moment().subtract(1, 'days').tz(config.timezone).format(formato)
+  return moment().subtract(1, 'days').tz(config.timezone).utc().format(formato)
 }
 
 module.exports = service
