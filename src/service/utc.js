@@ -49,4 +49,8 @@ service.getYesterdayAndHourUTC = function (format = false) {
   return moment().subtract(1, 'days').tz(config.timezone).utc().format(formato)
 }
 
+service.getLocalTimeWithFormat = function (time) {
+  return moment(time).format(config.formatoComun)
+}
+
 module.exports = service
