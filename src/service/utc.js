@@ -16,13 +16,11 @@ service.getUTCDiaActualFinal = function (format = false) {
 
 service.getUTCInicio = function (fecha, format = false) {
   const formato = format || config.formatoUtc
-  console.log(moment.tz(fecha, config.timezone).startOf('day').utc().format(formato))
   return moment.tz(fecha, config.timezone).startOf('day').utc().format(formato)
 }
 
 service.getUTCFinal = function (fecha, format = false) {
   const formato = format || config.formatoUtc
-  console.log(moment.tz(fecha, config.timezone).endOf('day').utc().format(formato))
   return moment.tz(fecha, config.timezone).endOf('day').utc().format(formato)
 }
 
@@ -38,12 +36,12 @@ service.getUTCFinalMesActual = function (format = false) {
 
 service.convertToUTC = function (fecha, format = false) {
   const formato = format || config.formatoUtc
-  return moment(fecha).utc().format(formato)
+  return moment.tz(fecha, config.timezone).utc().format(formato)
 }
 
 service.convertToLocalZone = function (fecha, format = false) {
   const formato = format || config.formatoLocal
-  return moment(fecha).tz(config.timezone).format(formato)
+  return moment.tz(fecha, config.timezone).format(formato)
 }
 
 service.getTodayAndHourUTC = function (format = false) {
@@ -62,7 +60,7 @@ service.getYesterdayAndHourUTC = function (format = false) {
 }
 
 service.getLocalTimeWithFormat = function (time) {
-  return moment(time).format(config.formatoComun)
+  return moment.tz(time, config.timezone).format(config.formatoComun)
 }
 
 module.exports = service
