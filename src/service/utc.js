@@ -34,6 +34,16 @@ service.getUTCFinalMesActual = function (format = false) {
   return moment().tz(config.timezone).endOf('month').utc().format(formato)
 }
 
+service.getLocalInicioMesActual = function (format = false) {
+  const formato = format || config.formatoLocal
+  return moment().tz(config.timezone).startOf('month').format(formato)
+}
+
+service.getLocalFinalMesActual = function (format = false) {
+  const formato = format || config.formatoLocal
+  return moment().tz(config.timezone).endOf('month').format(formato)
+}
+
 service.convertToUTC = function (fecha, format = false) {
   const formato = format || config.formatoUtc
   return moment.tz(fecha, config.timezone).utc().format(formato)
