@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "standardx | snazzy",
-    "lintfix": "standardx --fix | snazzy"
+    "lintfix": "standardx --fix | snazzy",
+    "test": "node ./test/test"
   },
   "author": "Carlos Morales",
   "license": "MIT",
