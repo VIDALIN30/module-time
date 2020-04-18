@@ -16,14 +16,14 @@ service.getUTCDiaActualFinal = function (format = false) {
 
 service.getUTCInicio = function (fecha, format = false) {
   const formato = format || config.formatoUtc
-  console.log(moment(fecha).tz(config.timezone).startOf('day').utc().format(formato))
-  return moment(fecha).tz(config.timezone).startOf('day').utc().format(formato)
+  console.log(moment.tz(fecha, config.timezone).startOf('day').utc().format(formato))
+  return moment.tz(fecha, config.timezone).startOf('day').utc().format(formato)
 }
 
 service.getUTCFinal = function (fecha, format = false) {
   const formato = format || config.formatoUtc
-  console.log(moment(fecha).tz(config.timezone).endOf('day').utc().format(formato))
-  return moment(fecha).tz(config.timezone).endOf('day').utc().format(formato)
+  console.log(moment.tz(fecha, config.timezone).endOf('day').utc().format(formato))
+  return moment.tz(fecha, config.timezone).endOf('day').utc().format(formato)
 }
 
 service.getUTCInicioMesActual = function (format = false) {
