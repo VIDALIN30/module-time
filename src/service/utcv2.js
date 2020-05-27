@@ -3,6 +3,7 @@
 const moment = require('moment-timezone')
 
 module.exports = function (config) {
+  
   config = config || {
     timezone: 'America/Mazatlan',
     formatoUtc: 'YYYY-MM-DD HH:mm:ss.SSSZ',
@@ -80,4 +81,6 @@ module.exports = function (config) {
   service.getLocalTimeWithFormat = function (time) {
     return moment.tz(time, config.timezone).format(config.formatoComun)
   }
+
+  return service
 }
